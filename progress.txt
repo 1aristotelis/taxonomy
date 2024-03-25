@@ -1,0 +1,7 @@
+25/03/2024
+Init Repo
+[x] Basic Skeleton
+[x] Github Auth
+[x] Add Project Model
+[] Create New Project
+ 

@@ -6,6 +6,7 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { useLockBody } from "@/hooks/use-lock-body"
 import { Icons } from "@/components/icons"
+import { ModeToggle } from "./mode-toggle"
 
 interface MobileNavProps {
   items: MainNavItem[]
@@ -41,6 +42,7 @@ export function MobileNav({ items, children }: MobileNavProps) {
           ))}
         </nav>
         {children}
+        <ModeToggle/>
       </div>
     </div>
   )
