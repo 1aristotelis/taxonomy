@@ -1,6 +1,7 @@
 import { DashboardConfig } from "types"
 
 export const dashboardConfig: DashboardConfig = {
+  rootPath: "/dashboard",
   mainNav: [
     /* {
       title: "Documentation",

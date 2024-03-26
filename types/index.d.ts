@@ -44,10 +44,12 @@ export type DocsConfig = {
 }
 
 export type MarketingConfig = {
+  rootPath: string
   mainNav: MainNavItem[]
 }
 
 export type DashboardConfig = {
+  rootPath: string
   mainNav: MainNavItem[]
   sidebarNav: SidebarNavItem[]
 }

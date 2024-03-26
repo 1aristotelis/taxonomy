@@ -9,6 +9,7 @@ import { DashboardHeader } from "@/components/header"
 import { PostItem } from "@/components/post-item"
 import { DashboardShell } from "@/components/shell"
 import { ProjectCreateButton } from "@/components/project-create-button"
+import { ProjectItem } from "@/components/project-item"
 
 export const metadata = {
   title: "Dashboard",
@@ -22,15 +23,16 @@ export default async function DashboardPage() {
   }
  
 
-  const posts = await db.post.findMany({
+  const projects = await db.project.findMany({
     where: {
       authorId: user.id,
     },
     select: {
       id: true,
-      title: true,
-      published: true,
+      name: true,
+      description: true,
       createdAt: true,
+      updatedAt: true
     },
     orderBy: {
       updatedAt: "desc",
@@ -43,10 +45,10 @@ export default async function DashboardPage() {
             <ProjectCreateButton />
         </DashboardHeader>
         <div>
-          {posts?.length ? (
+          {projects?.length ? (
             <div className="divide-y divide-border rounded-md border">
-              {posts.map((post) => (
-                <PostItem key={post.id} post={post} />
+              {projects.map((project) => (
+                <ProjectItem key={project.id} project={project} />
               ))}
             </div>
           ) : (

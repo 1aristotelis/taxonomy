@@ -97,6 +97,34 @@ model Project {
   authorId  String
 
   author User @relation(fields: [authorId], references: [id])
+  
+  hardware Hardware[]
+  ios IO[]
 
   @@map(name:"projects")
+}
+
+model Hardware {
+  id String @id @default(cuid())
+  name String
+  projectId String
+  project Project @relation(fields: [projectId], references: [id])
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @default(now()) @map(name: "updated_at")
+  authorId  String
+
+  @@map(name: "hardware")
+}
+
+model IO {
+  id String @id @default(cuid())
+  name String
+  projectId String
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @default(now()) @map(name: "updated_at")
+  authorId  String
+
+  project Project @relation(fields: [projectId], references: [id])
+
+  @@map(name: "IOs")
 }

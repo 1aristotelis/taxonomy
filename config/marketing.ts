@@ -1,12 +1,13 @@
 import { MarketingConfig } from "types"
 
 export const marketingConfig: MarketingConfig = {
+  rootPath: "/",
   mainNav: [
     {
       title: "Features",
       href: "/#features",
     },
-    {
+   /*  {
       title: "Pricing",
       href: "/pricing",
     },
@@ -17,6 +18,6 @@ export const marketingConfig: MarketingConfig = {
     {
       title: "Documentation",
       href: "/docs",
-    },
+    }, */
   ],
 }

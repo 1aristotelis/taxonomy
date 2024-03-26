@@ -3,5 +3,7 @@ Init Repo
 [x] Basic Skeleton
 [x] Github Auth
 [x] Add Project Model
-[] Create New Project
- 
+26/03/2024
+[x] Create New Project
+[] Spinner Create new project button
+[] Delete Project
