@@ -7,7 +7,7 @@ import { postPatchSchema } from "@/lib/validations/post"
 
 const routeContextSchema = z.object({
   params: z.object({
-    postId: z.string(),
+    projectId: z.string(),
   }),
 })
 
@@ -19,15 +19,15 @@ export async function DELETE(
     // Validate the route params.
     const { params } = routeContextSchema.parse(context)
 
-    // Check if the user has access to this post.
-    if (!(await verifyCurrentUserHasAccessToPost(params.postId))) {
+    // Check if the user has access to this project.
+    if (!(await verifyCurrentUserHasAccessToProject(params.projectId))) {
       return new Response(null, { status: 403 })
     }
 
-    // Delete the post.
-    await db.post.delete({
+    // Delete the project.
+    await db.project.delete({
       where: {
-        id: params.postId as string,
+        id: params.projectId as string,
       },
     })
 
@@ -50,7 +50,7 @@ export async function PATCH(
     const { params } = routeContextSchema.parse(context)
 
     // Check if the user has access to this post.
-    if (!(await verifyCurrentUserHasAccessToPost(params.postId))) {
+    if (!(await verifyCurrentUserHasAccessToProject(params.projectId))) {
       return new Response(null, { status: 403 })
     }
 
@@ -62,7 +62,7 @@ export async function PATCH(
     // TODO: Implement sanitization for content.
     await db.post.update({
       where: {
-        id: params.postId,
+        id: params.projectId,
       },
       data: {
         title: body.title,
@@ -80,11 +80,11 @@ export async function PATCH(
   }
 }
 
-async function verifyCurrentUserHasAccessToPost(postId: string) {
+async function verifyCurrentUserHasAccessToProject(projectId: string) {
   const session = await getServerSession(authOptions)
-  const count = await db.post.count({
+  const count = await db.project.count({
     where: {
-      id: postId,
+      id: projectId,
       authorId: session?.user.id,
     },
   })

@@ -10,6 +10,7 @@ import { PostItem } from "@/components/post-item"
 import { DashboardShell } from "@/components/shell"
 import { ProjectCreateButton } from "@/components/project-create-button"
 import { ProjectItem } from "@/components/project-item"
+import { ShowPopupCreateProjectButton } from "@/components/show-popup-create-project-button"
 
 export const metadata = {
   title: "Dashboard",
@@ -40,9 +41,9 @@ export default async function DashboardPage() {
   })
 
   return (
-      <DashboardShell>
+      <DashboardShell className="mb-8">
         <DashboardHeader heading="Projects" text="Create and manage projects">
-            <ProjectCreateButton />
+            <ShowPopupCreateProjectButton />
         </DashboardHeader>
         <div>
           {projects?.length ? (
@@ -58,7 +59,7 @@ export default async function DashboardPage() {
               <EmptyPlaceholder.Description>
                 You don&apos;t have any projects yet. Start creating systems.
               </EmptyPlaceholder.Description>
-                <ProjectCreateButton variant="outline" />
+                <ShowPopupCreateProjectButton variant="outline" />
             </EmptyPlaceholder>
           )}
         </div>

@@ -10,35 +10,33 @@ import { Icons } from "@/components/icons"
 import { Dialog, DialogTrigger } from "./ui/dialog"
 import { ProjectCreateDialog } from "./project-create-dialog"
 
-interface ProjectCreateButtonProps extends ButtonProps {
-  isLoading: boolean
-}
+interface ShowPopupCreateProjectButtonProps extends ButtonProps {}
 
-export function ProjectCreateButton({
-  isLoading,
+export function ShowPopupCreateProjectButton({
   className,
   variant,
   ...props
-}: ProjectCreateButtonProps) {
+}: ShowPopupCreateProjectButtonProps) {
+  const router = useRouter()
+  const [isLoading, setIsLoading] = React.useState<boolean>(false)
+
+  
 
   return (
+    <Dialog>
+      <DialogTrigger asChild>
         <button
           className={cn(
             buttonVariants({ variant }),
-            {
-              "cursor-not-allowed opacity-60": isLoading,
-            },
             className
           )}
-          disabled={isLoading}
           {...props}
         >
-          {isLoading ? (
-            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-          ) : (
             <Icons.add className="mr-2 h-4 w-4" />
-          )}
-          New project
+            New project
         </button>
+      </DialogTrigger>
+      <ProjectCreateDialog/>
+    </Dialog>
   )
 }

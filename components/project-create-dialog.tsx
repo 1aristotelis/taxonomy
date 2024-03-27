@@ -6,6 +6,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { toast } from "@/components/ui/use-toast"
 import { Button } from './ui/button';
+import { ProjectCreateButton } from './project-create-button';
 
 export function ProjectCreateDialog() {
   const [open, setOpen] = React.useState(false);
@@ -14,9 +15,7 @@ export function ProjectCreateDialog() {
   const [duplicateError, setDuplicateError] = React.useState(false)
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
 
-  const submitNewProject = async (e:any) => {
-    e.preventDefault()
-    console.log(projectName, projectDescription)
+  const submitNewProject = async () => {
     setIsLoading(true)
 
     const response = await fetch("/api/projects", {
@@ -68,7 +67,9 @@ export function ProjectCreateDialog() {
                     <Input required value={projectName} onChange={handleChangeTitle} type='text' placeholder='Project Name'/>
                     {duplicateError && <p className='text-red-500 text-sm'>Project already exists</p>}
                     <Textarea value={projectDescription} onChange={handleChangeDescription} placeholder='Enter a description for your project'/>
-                    <Button className='align-end' type='submit'>Create Project</Button>
+                    <ProjectCreateButton 
+                      isLoading={isLoading} 
+                      type='submit'>Create Project</ProjectCreateButton>
                 </form>
             </DialogDescription>
         </DialogContent>

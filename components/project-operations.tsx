@@ -76,7 +76,7 @@ export function ProjectOperations({ project }: ProjectOperationsProps) {
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>
-              Are you sure you want to delete this post?
+              Are you sure you want to delete this project?
             </AlertDialogTitle>
             <AlertDialogDescription>
               This action cannot be undone.
