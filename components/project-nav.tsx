@@ -75,7 +75,7 @@ export function ProjectNav({ projectId, items, children }: ProjectNavProps) {
           <Link href="#">Manage Catalog</Link>
         </SheetDescription>
         <SheetFooter className="h-36">
-          <Button className="w-full">
+          <Button disabled className="w-full">
             Generate Template
           </Button>
         </SheetFooter>

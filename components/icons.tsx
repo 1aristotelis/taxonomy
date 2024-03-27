@@ -1,9 +1,13 @@
 import {
   AlertTriangle,
   ArrowRight,
+  ArrowUpDown,
+  CircleEllipsis,
   Check,
   ChevronLeft,
   ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
   Command,
   CreditCard,
   File,
@@ -24,6 +28,11 @@ import {
   User,
   X,
   type Icon as LucideIcon,
+  SlidersHorizontal,
+  ArrowLeft,
+  ArrowUp,
+  ArrowDown,
+  EyeOff,
 } from "lucide-react"
 
 export type Icon = LucideIcon
@@ -33,7 +42,9 @@ export const Icons = {
   close: X,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
+  doubleChevronLeft: ChevronsLeft,
   chevronRight: ChevronRight,
+  doubleChevronRight: ChevronsRight,
   trash: Trash,
   post: FileText,
   page: File,
@@ -45,6 +56,10 @@ export const Icons = {
   warning: AlertTriangle,
   user: User,
   arrowRight: ArrowRight,
+  arrowLeft: ArrowLeft,
+  arrowUp: ArrowUp,
+  arrowDown: ArrowDown,
+  arrowUpDown: ArrowUpDown,
   help: HelpCircle,
   pizza: Pizza,
   sun: SunMedium,
@@ -69,4 +84,7 @@ export const Icons = {
   ),
   twitter: Twitter,
   check: Check,
+  circlePlus: CircleEllipsis,
+  slider: SlidersHorizontal,
+  eyeOff: EyeOff
 }

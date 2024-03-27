@@ -9,5 +9,8 @@ Init Repo
 [x] Spinner Create new project button
 [x] Delete Project
 [x] Project pages Layout
-[] HW page
-[] IO page
+[x] DataTable Component
+[x] Hardware Table
+[] IOs Table
+[] Create HW form
+[] Create IO form
