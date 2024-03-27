@@ -54,6 +54,10 @@ export type DashboardConfig = {
   sidebarNav: SidebarNavItem[]
 }
 
+export type ProjectConfig = {
+  mainNav: MainNavItem[]
+}
+
 export type SubscriptionPlan = {
   name: string
   description: string

@@ -15,7 +15,7 @@ export function ProjectItem({ project }: ProjectItemProps) {
     <div className="flex items-center justify-between p-4">
       <div className="grid gap-1">
         <Link
-          href={`/editor/${project.id}`}
+          href={`/project/${project.id}`}
           className="font-semibold hover:underline"
         >
           {project.name}

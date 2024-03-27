@@ -8,3 +8,6 @@ Init Repo
 27/03/2024
 [x] Spinner Create new project button
 [x] Delete Project
+[x] Project pages Layout
+[] HW page
+[] IO page
